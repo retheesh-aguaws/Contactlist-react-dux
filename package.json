@@ -1,0 +1,32 @@
+{
+  "name": "redux-assignment",
+  "version": "0.1.0",
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.3.3",
+    "css-loader": "^2.1.0",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "less-watch-compiler": "^1.13.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "react-scripts": "1.1.4",
+    "redux": "^4.0.0",
+    "style-loader": "^0.23.1",
+    "uuid": "^3.2.1"
+  },
+  "scripts": {
+    "build-css": "less-watch-compiler --run-once --main-file=styles.less src/ dist/",
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "react": "^16.8.2",
+    "redux-thunk": "^2.3.0",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14"
+  }
+}
