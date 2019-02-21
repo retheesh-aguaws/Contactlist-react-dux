@@ -27,28 +27,35 @@ body {
   height: 100%;
   width: 100%;
   display: flex;
-  border: solid 2px #001c00;
 }
 .left {
-  background: #2CA88C;
+  background: #2ca88c;
   flex: 1;
-  color: #FFFFFF;
+  flex-direction: column;
+  color: #ffffff;
   height: 100%;
   overflow: hidden;
+  justify-content: center;
   display: table-cell;
   vertical-align: middle;
 }
 .left h2 {
-  height: 80px;
   text-align: center;
 }
+.top-bar {
+  flex-direction: column;
+  height: 8%;
+  width: 100%;
+  justify-content: center;
+  min-height: 60;
+}
 .contacts-container {
-  height: 100%;
+  height: 92%;
   overflow: auto;
 }
 .contact {
-  border-top: solid 1px #f4f4f4;
-  background: #FFFFFF;
+  border-top: solid 1px #bbbbbb;
+  background: #ffffff;
   height: 60px;
   display: flex;
   align-items: center;
@@ -68,7 +75,7 @@ body {
   padding: 0 10px;
   font-size: 18px;
   font-weight: bold;
-  color: #0C7C8C;
+  color: #0c7c8c;
   width: 100%;
 }
 .contact .job {
@@ -77,10 +84,10 @@ body {
   padding: 0 10px;
   font-size: 16px;
   width: 100%;
-  color: #0C748C;
+  color: #0c748c;
 }
 .right {
-  background: #f4f4f4;
+  background: #bbbbbb;
   flex: 1;
 }
 .details {
@@ -138,27 +145,21 @@ body {
   text-decoration: underline;
   display: block;
 }
-search {
+.search {
   width: 100%;
   position: relative;
 }
 .searchTerm {
-  float: left;
-  width: 100%;
-  border: 3px solid #8CCC8C;
-  padding: 5px;
-  height: 20px;
-  border-radius: 5px;
-  outline: none;
+  width: 90%;
+  border: 1px solid #8ccc8c;
+  height: 60%;
   color: #000000;
 }
 .searchTerm:focus {
-  color: #70D08C;
+  color: #70d08c;
 }
 /*Resize the wrap to see the search bar change!*/
 .wrap {
-  width: 95%;
+  width: 100%;
   display: inline-block;
-  vertical-align: middle;
-  padding-left: 5px;
 }
