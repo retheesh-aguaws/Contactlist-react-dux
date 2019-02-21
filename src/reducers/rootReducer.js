@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import users from "./userReducer.js";
+import contactlist from "./userReducer.js";
 
 export default combineReducers({
-  users
+  contactlist
 });

@@ -6,10 +6,6 @@
     url("http://themes.googleusercontent.com/static/fonts/opensans/v4/cJZKeOuBrn4kERxqtaUH3aCWcynf_cDxXwCLxiixG1c.ttf")
       format("truetype");
 }
-@darkerGreen: #001c00;
-@darkGreen: #003300;
-@mediumGreen: #46733e;
-@lightGreen: #edf1be;
 
 @white: #ffffff;
 @black: #000000;
@@ -19,6 +15,7 @@
 @mediumAquaMarine: #70d08c;
 @lightSeaGreen: #2ca88c;
 @grey: #bbbbbb;
+@lightGrey:#dcd8d8;
 
 html,
 body {
@@ -32,7 +29,7 @@ body {
   justify-content: center;
   flex-direction: column;
   height: 100vh;
-  background: @mediumGreen;
+  background: @white;
 }
 .root {
   height: 100%;
@@ -45,11 +42,11 @@ body {
   display: flex;
 }
 .left {
-  background: @lightSeaGreen;
-  flex: 1;
+  background: @white;
   flex-direction: column;
   color: @white;
   height: 100%;
+  width:40%;
   overflow: hidden;
   justify-content: center;
   h2 {
@@ -59,15 +56,15 @@ body {
   vertical-align: middle;
 }
 .top-bar {
-  flex-direction: column;
   height: 8%;
   width: 100%;
-  justify-content: center;
-  min-height: 60;
+  margin: 0 0 0 0;
+  min-height: 60px;
 }
 .contacts-container {
   height: 92%;
   overflow: auto;
+  overflow-x: hidden;
 }
 .contact {
   border-top: solid 1px @grey;
@@ -103,7 +100,7 @@ body {
   }
 }
 .right {
-  background: @grey;
+  background: @lightGrey;
   flex: 1;
 }
 .details {
@@ -113,13 +110,15 @@ body {
 .contact-info {
   display: flex;
   flex-direction: column;
-  color: @darkGreen;
+  color: @black;
   header {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color:@darkCyan;
+    padding-bottom: 5px;
     .image {
       margin: 10px 0;
       height: 150px;
@@ -135,8 +134,8 @@ body {
         border-radius: 50%;
         padding: 55px;
         box-sizing: border-box;
-        content: "\f095";
-        color: @darkerGreen;
+        content: "\f095"; 
+        color: @white;
         font-size: 50px;
         font-family: "FontAwesome";
         opacity: 0;
@@ -151,9 +150,21 @@ body {
     h3 {
       margin: 0;
       text-align: center;
+      color: @white;
     }
   }
+  .occupation{
+    font-size: 15px;
+    font-weight: bold;
+    width: 100%;
+  }
+  .company-name {
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%;
+  }
   section {
+    text-align: center;
     flex: 1;
     padding: 15px;
     font-size: 14px;
@@ -170,18 +181,24 @@ body {
 }
 
 .searchTerm {
-  width: 90%;
+  width: 100%;
   border: 1px solid @darkSeaGreen;
-  height: 60%;
+  height: 100%;
   color: @black;
+  font-size: 16px;
+  padding-left:10px;
 }
 
 .searchTerm:focus {
   color: @mediumAquaMarine;
 }
 
-/*Resize the wrap to see the search bar change!*/
-.wrap {
-  width: 100%;
-  display: inline-block;
+.alert-box {
+  color:@white;
+  border-radius:10px;
+  padding:10px 36px;
+  margin:10px;
+  background-color: @grey;
+  text-align: center
 }
+

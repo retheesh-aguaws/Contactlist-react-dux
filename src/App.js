@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import UserList from "./containers/UserList";
 import style from "./styles.less";
-
-const stylesApp = {
-  marginTop: 40
-};
+import UserDetails from "./containers/UserDetails";
+import SearchBox from "./containers/SearchBox";
 
 class App extends Component {
   render() {
@@ -12,17 +10,15 @@ class App extends Component {
       <div className="app">
         <div className="left">
           <div className="top-bar">
-            <input
-              type="text"
-              className="searchTerm"
-              placeholder="Search contacts..."
-            />
+            <SearchBox />
           </div>
           <div className="contacts-container">
             <UserList />
           </div>
         </div>
-        <div className="right" />
+        <div className="right" >
+          <UserDetails />
+        </div>
       </div>
     );
   }

@@ -16,7 +16,7 @@ body {
   justify-content: center;
   flex-direction: column;
   height: 100vh;
-  background: #46733e;
+  background: #ffffff;
 }
 .root {
   height: 100%;
@@ -29,11 +29,11 @@ body {
   display: flex;
 }
 .left {
-  background: #2ca88c;
-  flex: 1;
+  background: #ffffff;
   flex-direction: column;
   color: #ffffff;
   height: 100%;
+  width: 40%;
   overflow: hidden;
   justify-content: center;
   display: table-cell;
@@ -43,15 +43,15 @@ body {
   text-align: center;
 }
 .top-bar {
-  flex-direction: column;
   height: 8%;
   width: 100%;
-  justify-content: center;
-  min-height: 60;
+  margin: 0 0 0 0;
+  min-height: 60px;
 }
 .contacts-container {
   height: 92%;
   overflow: auto;
+  overflow-x: hidden;
 }
 .contact {
   border-top: solid 1px #bbbbbb;
@@ -87,7 +87,7 @@ body {
   color: #0c748c;
 }
 .right {
-  background: #bbbbbb;
+  background: #dcd8d8;
   flex: 1;
 }
 .details {
@@ -97,7 +97,7 @@ body {
 .contact-info {
   display: flex;
   flex-direction: column;
-  color: #003300;
+  color: #000000;
 }
 .contact-info header {
   flex: 1;
@@ -105,6 +105,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #0c7c8c;
+  padding-bottom: 5px;
 }
 .contact-info header .image {
   margin: 10px 0;
@@ -123,7 +125,7 @@ body {
   padding: 55px;
   box-sizing: border-box;
   content: "\f095";
-  color: #001c00;
+  color: #ffffff;
   font-size: 50px;
   font-family: "FontAwesome";
   opacity: 0;
@@ -135,8 +137,20 @@ body {
 .contact-info header h3 {
   margin: 0;
   text-align: center;
+  color: #ffffff;
+}
+.contact-info .occupation {
+  font-size: 15px;
+  font-weight: bold;
+  width: 100%;
+}
+.contact-info .company-name {
+  font-size: 14px;
+  font-weight: bold;
+  width: 100%;
 }
 .contact-info section {
+  text-align: center;
   flex: 1;
   padding: 15px;
   font-size: 14px;
@@ -150,16 +164,21 @@ body {
   position: relative;
 }
 .searchTerm {
-  width: 90%;
+  width: 100%;
   border: 1px solid #8ccc8c;
-  height: 60%;
+  height: 100%;
   color: #000000;
+  font-size: 16px;
+  padding-left: 10px;
 }
 .searchTerm:focus {
   color: #70d08c;
 }
-/*Resize the wrap to see the search bar change!*/
-.wrap {
-  width: 100%;
-  display: inline-block;
+.alert-box {
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 10px 36px;
+  margin: 10px;
+  background-color: #bbbbbb;
+  text-align: center;
 }

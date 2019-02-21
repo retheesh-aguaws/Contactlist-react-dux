@@ -1,46 +1,62 @@
 import React from "react";
 import { connect } from "react-redux";
 import UserListItem from "../components/UserListItem";
-import {fetchContacts} from "../actions/contactActions.js"
+import { fetchContacts, selectContact } from "../actions/contactActions.js"
 
 class UserList extends React.Component {
+  constructor() {
+    super();
+    this.selectContact = this.selectContact.bind(this);
+  }
+  
   componentDidMount = () => {
     this.props.dispatch(fetchContacts());
   };
+
+  selectContact(contact) {
+    this.props.dispatch(selectContact(contact, this.props.filteredContacts));
+  }
+
   render() {
-    const { error, loading, users } = this.props;
+    const { error, loading, filteredContacts } = this.props;
 
     if (error) {
-      return <div>Error! {error.message}</div>;
+      return  <div className="alert-box">error.message</div>
     }
 
     if (loading) {
-      return <div>Loading...</div>;
+      return <div className="alert-box">Loading...</div>
     }
 
-    return users?(
+    return filteredContacts ? (
       <div>
-        {users.map(user => {
+        {filteredContacts.map(contact => {
           return (
             <UserListItem
-              user={user}
-              key={user.contact.email}
+              user={contact}
+              key={contact.contact.email}
+              onSelect={this.selectContact}
             />
           );
         })}
       </div>
-    ):null;
+    ) : null;
   }
 }
 
-const mapStateToProps = state => (state.users?
+const mapStateToProps = state => (state.contactlist ?
   {
-    users: state.users.users.contacts,
-    loading: state.users.loading,
-    error: state.users.error
-  }:null);
-  
+    selectedContact: state.contactlist.selectedContact,
+    filteredContacts: state.contactlist.filteredContacts,
+    loading: state.contactlist.loading,
+    error: state.contactlist.error
+  } : {});
+
+const mapDispatchToProps = (dispatch) => ({
+  selectContact: (user, users) => dispatch(selectContact(user, users)),
+  fetchContacts: () => dispatch(fetchContacts()),
+});
 
 export default connect(
-  mapStateToProps,
+  mapStateToProps, null
 )(UserList);

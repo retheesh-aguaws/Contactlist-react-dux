@@ -1,37 +1,36 @@
 import React from "react";
+import { connect } from "react-redux";
 
-const styles = {
-  borderBottom: "2px solid #eee",
-  background: "#fafafa",
-  padding: ".6rem 1rem",
-  maxWidth: "500px"
-};
+class UserListItem extends React.Component {
 
-const thumbStyle = {
-  borderRadius: "50%",
-  height: "60px",
-  width: "60px",
-  display: "inline-block"
-};
-
-export default ({ user: { general, contact, job }, onSelect }) => {
-  var imageStyles = {
-    backgroundImage: "url(" + general.avatar + ")"
-  };
-  var contactStyles = {
-    backgroundColor: "#FFFFFF"
-  };
-
-  return (
-    <div className="contact" style={contactStyles}>
-      <span className="image" style={imageStyles} />
-      <div className="details">
-        <span className="name">
-          {" "}
-          {general.firstName} {general.lastName}{" "}
-        </span>
-        <span className="job"> {job.company}</span>
+  render() {
+    var imageStyles = {
+      backgroundImage: "url(" + this.props.user.general.avatar + ")"
+    };
+    var contactStyles = {
+      backgroundColor: (this.props.selectedContact && this.props.selectedContact.contact.email === this.props.user.contact.email) ? "#dcd8d8" : "#FFFFFF"
+    };
+    return (
+      <div onClick={() => this.props.onSelect(this.props.user)} className="contact" style={contactStyles}>
+        <span className="image" style={imageStyles} />
+        <div className="details">
+          <span className="name">
+            {" "}
+            {this.props.user.general.firstName} {this.props.user.general.lastName}{" "}
+          </span>
+          <span className="job"> {this.props.user.job.company}</span>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
+
+const mapStateToProps = state => (state.contactlist ?
+  {
+    selectedContact: state.contactlist.selectedContact,
+  } : {});
+
+export default connect(
+  mapStateToProps, null
+)(UserListItem);
+
