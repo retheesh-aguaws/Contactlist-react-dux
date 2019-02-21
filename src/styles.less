@@ -9,7 +9,16 @@
 @darkerGreen: #001c00;
 @darkGreen: #003300;
 @mediumGreen: #46733e;
-@lightGreen: #edf1be; // #E3EAB7
+@lightGreen: #edf1be;
+
+@white:#FFFFFF;
+@black:#000000;
+@darkCyan:#0C7C8C;
+@teal:#0C748C;
+@darkSeaGreen:#8CCC8C;
+@mediumAquaMarine:#70D08C;
+@lightSeaGreen:#2CA88C;
+@grey:#f4f4f4;
 
 html,
 body {
@@ -37,23 +46,25 @@ body {
   border: solid 2px @darkerGreen;
 }
 .left {
-  background: @darkGreen;
+  background: @lightSeaGreen;
   flex: 1;
-  color: @lightGreen;
+  color: @white;
   height: 100%;
   overflow: hidden;
   h2 {
     height: 80px;
     text-align: center;
   }
+  display:table-cell;
+  vertical-align:middle;
 }
 .contacts-container {
   height: 100%;
   overflow: auto;
 }
 .contact {
-  border-top: solid 2px @darkerGreen;
-  background: @darkGreen;
+  border-top: solid 1px @grey;
+  background: @white;
   height: 60px;
   display: flex;
   align-items: center;
@@ -64,23 +75,33 @@ body {
     width: 60px;
     min-width: 60px;
     border-radius: 50%;
-    background-position: -10px 0px;
     background-size: cover;
   }
   .name {
-    display: inline-block;
-    vertical-align: middle;
-    line-height: normal;
+    display:inline-block;
+    vertical-align:middle;
+    padding:0 10px;
+    font-size:18px;
+    font-weight: bold;
+    color: @darkCyan;
+    width:100%;
+  }
+  .job {
+    display:inline-block;
+    vertical-align:middle;
+    padding:0 10px;
+    font-size:16px;
+    width:100%;
+    color: @teal;
   }
 }
 .right {
-  background: @lightGreen;
+  background: @grey;
   flex: 1;
 }
 .details {
-  height: 60px;
-  line-height: 90px;
-  text-align: center;
+  display:table-cell;
+  vertical-align:middle;
 }
 .contact-info {
   display: flex;
@@ -134,4 +155,32 @@ body {
       display: block;
     }
   }
+}
+///// Search Bar Styles
+search {
+  width: 100%;
+  position: relative
+}
+
+.searchTerm {
+  float: left;
+  width: 100%;
+  border: 3px solid @darkSeaGreen;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px;
+  outline: none;
+  color: @black;
+}
+
+.searchTerm:focus{
+  color:@mediumAquaMarine;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 95%;
+  display:inline-block;
+  vertical-align:middle;
+  padding-left: 5px;
 }

@@ -19,7 +19,7 @@ export default ({ user: { general, contact, job }, onSelect }) => {
     backgroundImage: "url(" + general.avatar + ")"
   };
   var contactStyles = {
-    backgroundColor: "#46733E"
+    backgroundColor: "#FFFFFF"
   };
 
   return (
@@ -30,7 +30,7 @@ export default ({ user: { general, contact, job }, onSelect }) => {
           {" "}
           {general.firstName} {general.lastName}{" "}
         </span>
-        <span className="name"> {job.company}</span>
+        <span className="job"> {job.company}</span>
       </div>
     </div>
   );

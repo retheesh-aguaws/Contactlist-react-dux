@@ -12,12 +12,17 @@ class App extends Component {
       <div className="app">
         <div className="left">
           <h2>Contacts</h2>
+          <div class="wrap">
+            <div class="search">
+              <input type="text" class="searchTerm" placeholder="Search contacts..."></input>
+            </div>
+          </div>
           <div className="contacts-container">
             <UserList />
           </div>
         </div>
         <div className="right">
-          
+
         </div>
       </div>
     );
